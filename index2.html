@@ -1,0 +1,76 @@
+<html>
+<head>
+    <title>My Web Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        header {
+            background-color: #289428;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        nav {
+            margin: 10px 0;
+        }
+        nav a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        .hero-ctas {
+            margin-top: 20px;
+        }
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn.primary {
+            background-color: #289428;
+            color: white;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <span style="float: left; padding: 1px;">Farm Direct</span>
+            <a href="#Home">Home</a>
+            <a href="#About">About</a>
+            <a href="#Contact">Contact</a>
+            <a href="#login" style="float: right; padding: 1px;">Login</a>
+            <a href="#get-started" style="float: right; padding: 1px;">Get Started</a>
+        </nav>
+    </header>
+    <main>
+        <section class="hero" id="home">
+                <div class="hero-inner">
+                    <div class="hero-copy">
+                        <h1>Fresh produce, direct from local farms to your table</h1>
+                        <p>Buy seasonal fruits, vegetables, dairy and more straight from our trusted farmers. Lower prices for you; fair pay for farmers.</p>
+                        <div class="hero-ctas">
+                            <a class="btn.primary" href="#products">Shop products</a>
+                            <a class="btn" href="#how">How it works</a>
+                        </div>
+                        <div style="margin-top:18px;color:var(--muted);font-size:14px">Free delivery on orders over40 • Weekly farm boxes available</div>
+                    </div>
+
+                    <div class="hero-media">
+                        <div class="card">
+                            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='320' height='200'><rect width='100%' height='100%' fill='%23e6fff2'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-size='18' fill='%23074f2b'>Farm-fresh produce</text></svg>" alt="farm" style="width:100%;border-radius:8px;display:block;margin-bottom:12px">
+                            <div style="color:#073642;font-weight:700">Weekly Farm Box</div>
+                            <div style="color:var(--muted);font-size:13px">Curated seasonal selection from nearby farms.</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    </main>
+</body>
+</html>
