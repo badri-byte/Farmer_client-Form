@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Farmer Client Application</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background: #f4f9f4;
+      color: #333;
+    }
+    h1 {
+      color: #2d6a4f;
+    }
+    .output {
+      background: #e9f5e9;
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-top: 10px;
+      white-space: pre-line;
+    }
+    button {
+      margin: 5px;
+      padding: 8px 12px;
+      background: #40916c;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #2d6a4f;
+    }
+  </style>
+</head>
+<body>
+  <h1></h1>Farmer Client Application</h1>
+  <p>Click the buttons below to run farmer functions:</p>
+
+  <button onclick="showGreeting()">Greet Farmer</button>
+  <button onclick="showAddCrop()">Add Crop</button>
+  <button onclick="showProfit()">Calculate Profit</button>
+  <button onclick="showWeather()">Check Weather</button>
+  <button onclick="showFeed()">Feed Animals</button>
+  <button onclick="showExpense()">Record Expense</button>
+  <button onclick="showSummary()">Farm Summary</button>
+
+  <div class="output" id="output"></div>
+
+  <script>
+    
+    let farmer = {
+      name: "Ravi",
+      age: 45,
+      farmSize: "10 acres"
+    };
+
+    
+    let crop = {
+      type: "Wheat",
+      season: "Winter",
+      quantity: 200
+    };
+
+    
+    let livestock = {
+      cows: 10,
+      goats: 5,
+      chickens: 30
+    };
+
+    
+    function greetFarmer(farmerName) {
+      return "Hello, " + farmerName + "! Welcome to your farm app.";
+    }
+
+    function addCrop(type, season, quantity) {
+      return { type, season, quantity };
+    }
+
+    function calculateProfit(cost, sellingPrice, quantity) {
+      return (sellingPrice - cost) * quantity;
+    }
+
+    function checkWeather(weather) {
+      if (weather === "rainy") {
+        return "Good for crops!";
+      } else {
+        return "Irrigation needed.";
+      }
+    }
+
+    function feedAnimals(animal, food) {
+      return "Feeding " + animal + " with " + food;
+    }
+
+    function recordExpense(item, amount) {
+      return "Expense recorded: " + item + " - ₹" + amount;
+    }
+
+    function farmSummary(farmer, crop, livestock) {
+      return farmer.name + " has " + crop.quantity + " units of " + crop.type +
+             " and " + livestock.cows + " cows.";
+    }
+
+    
+    function showGreeting() {
+      document.getElementById("output").innerText = greetFarmer(farmer.name);
+    }
+
+    function showAddCrop() {
+      let newCrop = addCrop("Rice", "Summer", 150);
+      document.getElementById("output").innerText = "New crop added: " + JSON.stringify(newCrop);
+    }
+
+    function showProfit() {
+      let profit = calculateProfit(20, 35, crop.quantity);
+      document.getElementById("output").innerText = "Profit: ₹" + profit;
+    }
+
+    function showWeather() {
+      document.getElementById("output").innerText = checkWeather("sunny");
+    }
+
+    function showFeed() {
+      document.getElementById("output").innerText = feedAnimals("goats", "grass");
+    }
+
+    function showExpense() {
+      document.getElementById("output").innerText = recordExpense("Fertilizer", 5000);
+    }
+
+    function showSummary() {
+      document.getElementById("output").innerText = farmSummary(farmer, crop, livestock);
+    }
+  </script>
+</body>
+</html>
